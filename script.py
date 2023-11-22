@@ -35,9 +35,23 @@ def fill_lists_trigonometric(xval, yval, function_number):
         print("Function not implemented.")
         sys.exit(1)
 
+# Stage 6: Development Branch
+
+def print_usage():
+    print("Usage: python script.py <function_number>")
+    print("Supported functions:")
+    print("  1 - f(x) = x")
+    print("  2 - f(x) = x^2 (polynomial)")
+    print("  3 - f(x) = x^3 (polynomial)")
+    print("  4 - f(x) = sin(x) (trigonometric)")
+    print("  5 - f(x) = cos(x) (trigonometric)")
+    print("  6 - f(x) = tan(x) (trigonometric)")
+    print("  7 - f(x) = exp(x) (irrational)")
+    print("  8 - f(x) = sqrt(|x|) (irrational)")
 
 
 if __name__ == "__main__":
+    print_usage()
     function_number = parse_command_line()
     print(f"Selected function number: {function_number}")
 
