@@ -2,6 +2,8 @@
 
 import sys
 import numpy as np
+import matplotlib.pyplot as plt
+
 
 def parse_command_line():
     if len(sys.argv) != 2:
@@ -37,5 +39,14 @@ if __name__ == "__main__":
     # Fill lists based on function number
     fill_lists(xval, yval, function_number)
 
-    print("xval:", xval)
-    print("yval:", yval)
+    #print("xval:", xval)
+    #print("yval:", yval)
+    
+    # Plot the lists
+    plt.plot(xval, yval, label=f'Function {function_number}')
+    plt.xlabel('x values')
+    plt.ylabel('y values')
+    plt.title('Visualization of xval and yval')
+    plt.legend()
+    plt.show()
+
