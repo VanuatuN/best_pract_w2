@@ -18,7 +18,9 @@ def parse_command_line():
         print("Please provide a valid integer for function number.")
         sys.exit(1)
 
-def fill_lists_trigonometric(xval, yval, function_number):
+# Stage 7: Irrational Functions
+
+def fill_lists_irrational(xval, yval, function_number):
     if function_number == 1:
         yval.extend(xval)  # y = f(x) = x
     elif function_number == 2:
@@ -31,6 +33,10 @@ def fill_lists_trigonometric(xval, yval, function_number):
         yval.extend(math.cos(x) for x in xval)  # y = f(x) = cos(x)
     elif function_number == 6:
         yval.extend(math.tan(x) for x in xval)  # y = f(x) = tan(x)
+    elif function_number == 7:
+        yval.extend(math.exp(x) for x in xval)  # y = f(x) = exp(x)
+    elif function_number == 8:
+        yval.extend(math.sqrt(abs(x)) for x in xval)  # y = f(x) = sqrt(|x|)
     else:
         print("Function not implemented.")
         sys.exit(1)
@@ -62,7 +68,7 @@ if __name__ == "__main__":
     yval = []
 
     # Fill lists based on function number
-    fill_lists_trigonometric(xval, yval, function_number)
+    fill_lists_irrational(xval, yval, function_number)
 
     #print("xval:", xval)
     #print("yval:", yval)
