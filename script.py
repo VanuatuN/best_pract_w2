@@ -3,6 +3,7 @@
 import sys
 import numpy as np
 import matplotlib.pyplot as plt
+import math
 
 
 def parse_command_line():
@@ -17,14 +18,24 @@ def parse_command_line():
         print("Please provide a valid integer for function number.")
         sys.exit(1)
 
-# Stage 2: Fill Lists
-
-def fill_lists(xval, yval, function_number):
+def fill_lists_trigonometric(xval, yval, function_number):
     if function_number == 1:
         yval.extend(xval)  # y = f(x) = x
+    elif function_number == 2:
+        yval.extend(x**2 for x in xval)  # y = f(x) = x**2
+    elif function_number == 3:
+        yval.extend(x**3 for x in xval)  # y = f(x) = x**3
+    elif function_number == 4:
+        yval.extend(math.sin(x) for x in xval)  # y = f(x) = sin(x)
+    elif function_number == 5:
+        yval.extend(math.cos(x) for x in xval)  # y = f(x) = cos(x)
+    elif function_number == 6:
+        yval.extend(math.tan(x) for x in xval)  # y = f(x) = tan(x)
     else:
         print("Function not implemented.")
         sys.exit(1)
+
+
 
 if __name__ == "__main__":
     function_number = parse_command_line()
@@ -37,7 +48,7 @@ if __name__ == "__main__":
     yval = []
 
     # Fill lists based on function number
-    fill_lists(xval, yval, function_number)
+    fill_lists_trigonometric(xval, yval, function_number)
 
     #print("xval:", xval)
     #print("yval:", yval)
@@ -49,4 +60,7 @@ if __name__ == "__main__":
     plt.title('Visualization of xval and yval')
     plt.legend()
     plt.show()
+
+
+
 
